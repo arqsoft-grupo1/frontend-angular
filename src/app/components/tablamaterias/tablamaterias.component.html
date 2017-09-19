@@ -1,0 +1,85 @@
+<md-checkbox>Check me!</md-checkbox>
+<p>
+  tablamaterias works!
+</p>
+<md-form-field>
+  <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
+  <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+  <md-datepicker #picker></md-datepicker>
+</md-form-field>
+<form class="example-form">
+  <md-form-field class="example-full-width">
+    <input mdInput placeholder="Favorite food" value="Sushi">
+  </md-form-field>
+</form>
+<md-radio-group>
+  <md-radio-button value="1">Option 1</md-radio-button>
+  <md-radio-button value="2">Option 2</md-radio-button>
+</md-radio-group>
+
+
+<div>---------------------</div>
+<div class="example-container mat-elevation-z8">
+
+  <md-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- ID Column -->
+    <ng-container mdColumnDef="userId">
+      <md-header-cell *mdHeaderCellDef> ID </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.id}} </md-cell>
+    </ng-container>
+
+    <!-- Progress Column -->
+    <ng-container mdColumnDef="progress">
+      <md-header-cell *mdHeaderCellDef> Progress </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.progress}}% </md-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container mdColumnDef="userName">
+      <md-header-cell *mdHeaderCellDef> Name </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.name}} </md-cell>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container mdColumnDef="color">
+      <md-header-cell *mdHeaderCellDef> Color </md-header-cell>
+      <md-cell *mdCellDef="let row" [style.color]="row.color"> {{row.color}} </md-cell>
+    </ng-container>
+
+    <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+  </md-table>
+
+  <md-paginator #paginator
+                [length]="exampleDatabase.data.length"
+                [pageIndex]="0"
+                [pageSize]="25"
+                [pageSizeOptions]="[5, 10, 25, 100]">
+  </md-paginator>
+</div>
+
+-----------------------------------------------------------------
+
+
+<md-expansion-panel>
+  <md-expansion-panel-header>
+    <md-panel-title>
+      Personal data
+    </md-panel-title>
+    <md-panel-description>
+      Type your name and age
+    </md-panel-description>
+  </md-expansion-panel-header>
+
+  <md-form-field>
+    <input mdInput placeholder="First name">
+  </md-form-field>
+
+  <md-form-field>
+    <input mdInput placeholder="Age">
+  </md-form-field>
+</md-expansion-panel>
