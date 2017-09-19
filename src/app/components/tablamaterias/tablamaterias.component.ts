@@ -15,10 +15,14 @@ import {MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
   templateUrl: 'tablamaterias.component.html',
 })
 export class TablamateriasComponent {
-    displayedColumns = ['id', 'name', 'rol'];
+    displayedColumns = ['id', 'name', 'rol', 'pp'];
      exampleDatabase = new ExampleDatabase();
      dataSource: ExampleDataSource | null;
-
+      foods = [
+                      {value: 'steak-0', viewValue: 'Steak'},
+                      {value: 'pizza-1', viewValue: 'Pizza'},
+                      {value: 'tacos-2', viewValue: 'Tacos'}
+                    ];
      @ViewChild(MdPaginator) paginator: MdPaginator;
 
      ngOnInit() {
@@ -39,14 +43,9 @@ export class TablamateriasComponent {
      dataChange: BehaviorSubject<UserData[]> = new BehaviorSubject<UserData[]>([]);
      get data(): UserData[] { return this.dataChange.value; }
      datos;
-     foods;
      constructor() {
         // Fill up the database with 100 users.
-        this.foods = [
-                        {value: 'steak-0', viewValue: 'Steak'},
-                        {value: 'pizza-1', viewValue: 'Pizza'},
-                        {value: 'tacos-2', viewValue: 'Tacos'}
-                      ];
+
       this.datos = [
           {id: 1, name: 'Martin', rol: 'Empleado'},
           {id: 2, name: 'Leandro', rol: 'Empleado'},

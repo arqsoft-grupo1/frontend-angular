@@ -10,6 +10,7 @@ import {MdRadioModule} from '@angular/material';
 import {MdTableModule} from '@angular/material';
 import {MdPaginatorModule} from '@angular/material';
 import {MdExpansionModule} from '@angular/material';
+import {MdSelectModule} from '@angular/material';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import {MdExpansionModule} from '@angular/material';
     MdTableModule,
     MdPaginatorModule,
     MdExpansionModule,
+    MdSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
