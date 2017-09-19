@@ -44,8 +44,9 @@ export class TablamateriasComponent {
      get data(): UserData[] { return this.dataChange.value; }
      datos;
      constructor() {
-        // Fill up the database with 100 users.
 
+      // Esta variable this.datos tiene que contener los datos de cosas que quieren
+      // mostrarse-
       this.datos = [
           {id: 1, name: 'Martin', rol: 'Empleado'},
           {id: 2, name: 'Leandro', rol: 'Empleado'},
@@ -90,7 +91,6 @@ export class TablamateriasComponent {
           {id: 3, name: 'Hernan ', rol: 'Empleado'}
         ];
         this.dataChange.next(this.datos);
-        console.log(this.datos);
      }
    }
 
