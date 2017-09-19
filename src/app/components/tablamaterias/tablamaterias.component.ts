@@ -15,7 +15,7 @@ import {MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
   templateUrl: 'tablamaterias.component.html',
 })
 export class TablamateriasComponent {
-    displayedColumns = ['userId', 'userName', 'progress', 'color'];
+    displayedColumns = ['id', 'name', 'rol'];
      exampleDatabase = new ExampleDatabase();
      dataSource: ExampleDataSource | null;
 
@@ -26,18 +26,11 @@ export class TablamateriasComponent {
      }
    }
 
-   /** Constants used to fill up our data base. */
-   const COLORS = ['maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple',
-     'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
-   const NAMES = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
-     'Charlotte', 'Theodore', 'Isla', 'Oliver', 'Isabella', 'Jasper',
-     'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'];
 
    export interface UserData {
      id: string;
      name: string;
-     progress: string;
-     color: string;
+     rol: string;
    }
 
    /** An example database that the data source uses to retrieve data for the table. */
@@ -45,31 +38,60 @@ export class TablamateriasComponent {
      /** Stream that emits whenever the data has been modified. */
      dataChange: BehaviorSubject<UserData[]> = new BehaviorSubject<UserData[]>([]);
      get data(): UserData[] { return this.dataChange.value; }
-
+     datos;
+     foods;
      constructor() {
-       // Fill up the database with 100 users.
-       for (let i = 0; i < 100; i++) { this.addUser(); }
-     }
-
-     /** Adds a new user to the database. */
-     addUser() {
-       const copiedData = this.data.slice();
-       copiedData.push(this.createNewUser());
-       this.dataChange.next(copiedData);
-     }
-
-     /** Builds and returns a new User. */
-     private createNewUser() {
-       const name =
-           NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-           NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
-
-       return {
-         id: (this.data.length + 1).toString(),
-         name: name,
-         progress: Math.round(Math.random() * 100).toString(),
-         color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-       };
+        // Fill up the database with 100 users.
+        this.foods = [
+                        {value: 'steak-0', viewValue: 'Steak'},
+                        {value: 'pizza-1', viewValue: 'Pizza'},
+                        {value: 'tacos-2', viewValue: 'Tacos'}
+                      ];
+      this.datos = [
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 1, name: 'Martin', rol: 'Empleado'},
+          {id: 2, name: 'Leandro', rol: 'Empleado'},
+          {id: 3, name: 'Hernan ', rol: 'Empleado'}
+        ];
+        this.dataChange.next(this.datos);
+        console.log(this.datos);
      }
    }
 

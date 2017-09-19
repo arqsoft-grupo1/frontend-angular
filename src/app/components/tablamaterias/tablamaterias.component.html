@@ -27,27 +27,29 @@
           The actual rendered columns are set as a property on the row definition" -->
 
     <!-- ID Column -->
-    <ng-container mdColumnDef="userId">
+    <ng-container mdColumnDef="id">
       <md-header-cell *mdHeaderCellDef> ID </md-header-cell>
       <md-cell *mdCellDef="let row"> {{row.id}} </md-cell>
     </ng-container>
 
     <!-- Progress Column -->
-    <ng-container mdColumnDef="progress">
-      <md-header-cell *mdHeaderCellDef> Progress </md-header-cell>
-      <md-cell *mdCellDef="let row"> {{row.progress}}% </md-cell>
+    <ng-container mdColumnDef="name">
+      <md-header-cell *mdHeaderCellDef> Name </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.name}}</md-cell>
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container mdColumnDef="userName">
-      <md-header-cell *mdHeaderCellDef> Name </md-header-cell>
-      <md-cell *mdCellDef="let row"> {{row.name}} </md-cell>
+    <ng-container mdColumnDef="rol">
+      <md-header-cell *mdHeaderCellDef> Rol </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.rol}} </md-cell>
     </ng-container>
-
-    <!-- Color Column -->
-    <ng-container mdColumnDef="color">
-      <md-header-cell *mdHeaderCellDef> Color </md-header-cell>
-      <md-cell *mdCellDef="let row" [style.color]="row.color"> {{row.color}} </md-cell>
+    <ng-container mdColumnDef="pp">
+      <md-header-cell *mdHeaderCellDef> Prueba </md-header-cell>
+      <md-select placeholder="Favorite food">
+        <md-option *ngFor="let food of foods" [value]="food.value">
+          {{ food.viewValue }}
+        </md-option>
+      </md-select>
     </ng-container>
 
     <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
