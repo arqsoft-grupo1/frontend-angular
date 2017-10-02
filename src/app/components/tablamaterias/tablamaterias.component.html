@@ -1,23 +1,3 @@
-<md-checkbox>Check me!</md-checkbox>
-<p>
-  tablamaterias works!
-</p>
-<md-form-field>
-  <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
-  <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
-  <md-datepicker #picker></md-datepicker>
-</md-form-field>
-<form class="example-form">
-  <md-form-field class="example-full-width">
-    <input mdInput placeholder="Favorite food" value="Sushi">
-  </md-form-field>
-</form>
-<md-radio-group>
-  <md-radio-button value="1">Option 1</md-radio-button>
-  <md-radio-button value="2">Option 2</md-radio-button>
-</md-radio-group>
-
-
 <div>---------------------</div>
 <div class="example-container mat-elevation-z8">
 
@@ -41,14 +21,14 @@
     <!-- Name Column -->
     <ng-container mdColumnDef="rol">
       <md-header-cell *mdHeaderCellDef> Rol </md-header-cell>
-      <md-cell *mdCellDef="let row"> {{row.rol}} </md-cell>
+      <md-cell *mdCellDef="let row"> {{row.role}} </md-cell>
     </ng-container>
     <ng-container mdColumnDef="pp">
       <md-header-cell *mdHeaderCellDef> Prueba </md-header-cell>
       <md-cell *mdCellDef="let row">
         <md-select placeholder="Favorite food">
-          <md-option *ngFor="let food of foods" [value]="food.value">
-            {{ food.viewValue }}
+          <md-option *ngFor="let opc of opciones" [value]="opc.value">
+            {{ opc.viewValue }}
           </md-option>
         </md-select>
       </md-cell>
@@ -59,31 +39,9 @@
   </md-table>
 
   <md-paginator #paginator
-                [length]="exampleDatabase.data.length"
+                [length]="dataSource?.data.length"
                 [pageIndex]="0"
                 [pageSize]="25"
                 [pageSizeOptions]="[5, 10, 25, 100]">
   </md-paginator>
 </div>
-
------------------------------------------------------------------
-
-
-<md-expansion-panel>
-  <md-expansion-panel-header>
-    <md-panel-title>
-      Personal data
-    </md-panel-title>
-    <md-panel-description>
-      Type your name and age
-    </md-panel-description>
-  </md-expansion-panel-header>
-
-  <md-form-field>
-    <input mdInput placeholder="First name">
-  </md-form-field>
-
-  <md-form-field>
-    <input mdInput placeholder="Age">
-  </md-form-field>
-</md-expansion-panel>

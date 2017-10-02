@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { TablamateriasComponent } from './components/tablamaterias/tablamaterias.component';
@@ -12,6 +13,7 @@ import {MdPaginatorModule} from '@angular/material';
 import {MdExpansionModule} from '@angular/material';
 import {MdSelectModule} from '@angular/material';
 
+import { UserService } from "./servicios/userservice.service";
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import {MdSelectModule} from '@angular/material';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     MdCheckboxModule,
     BrowserAnimationsModule,
     MdDatepickerModule,
@@ -30,7 +33,7 @@ import {MdSelectModule} from '@angular/material';
     MdExpansionModule,
     MdSelectModule,
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
