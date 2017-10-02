@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
-import { User } from '/home/mramos/UNQ/agularcomponents/src/app/modelo/user'
+import { User } from '../modelo/user'
 
 @Injectable()
 export class UserService {
