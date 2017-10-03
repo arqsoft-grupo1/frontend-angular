@@ -1,12 +1,13 @@
 import {Component, ViewChild} from '@angular/core';
-import {DataSource} from '@angular/cdk/collections';
-import {MdPaginator} from '@angular/material';
+// import {DataSource} from '@angular/cdk/collections';
+import {DataSource} from '@angular/cdk/table'
+import {MatPaginator} from '@angular/material';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/map';
-import {MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { UserService } from "../../servicios/userservice.service";
 import { User } from "../../modelo/user";
 
@@ -25,7 +26,7 @@ export class TablamateriasComponent {
                       {value: 'todaviano', viewValue: 'Todavia no'},
                       {value: 'Elanoproximo', viewValue: 'Proximamente'}
                     ];
-     @ViewChild(MdPaginator) paginator: MdPaginator;
+     @ViewChild(MatPaginator) paginator: MatPaginator;
 
      constructor(private userService: UserService) { }
 
@@ -40,7 +41,7 @@ export class TablamateriasComponent {
 export class ExampleDataSource extends DataSource<any> {
   dataChange: BehaviorSubject<User[]> = new BehaviorSubject<User[]>([]);
 
-     constructor(public data, private _paginator: MdPaginator) {
+     constructor(public data, private _paginator: MatPaginator) {
        super();
      }
 
