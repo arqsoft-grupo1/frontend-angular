@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 
 import {
-  MatButtonModule,
   MatMenuModule,
   MatToolbarModule,
   MatIconModule,
@@ -13,7 +12,6 @@ import {
 
 @NgModule({
   imports: [
-    MatButtonModule,
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
@@ -23,7 +21,6 @@ import {
     MatPaginatorModule
   ],
   exports: [
-    MatButtonModule,
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
