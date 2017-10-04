@@ -1,29 +1,50 @@
-# Materias
+## Frontend Angular 4
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.1.
+## Descripcion
+Utilizando Angular 4 consumimos web service de nuestro backend para luego mostrarlo en una tabla con paginado.
 
-## Development server
+Version de angular core que utilizamos es @angular/core": "^4.4.3
+Y angular material "@angular/material": "^2.0.0-beta.11"
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[Angular Material](https://material.angular.io/)
 
-## Code scaffolding
+## URL del repositorio
+- [Url github](https://github.com/arqsoft-grupo1/frontend-angular.git)
+- [Url heroku](https://arq-soft-grupo1-angular.herokuapp.com/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Puntos a favor
+1. Es un framework con todas sus cualidades
+2. La estructura del proyecto es legible
+3. La estructura del codigo permite separar controlador de la
+   vista y los servicios.
+4. Facil mantenimiento en caso que esten correctamente        
+   configuradas las versiones de las dependencias   
+5. Es multiplataforma  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Puntos en contra
+1. Es un poco mas complejo de instalar
+2. Complejo para manejar la compatibilidad de versiones entre  
+   las librerias a utilizar.
 
-## Running unit tests
+## Descripcion de la tecnologia
+Es un framework para aplicaciones web de TypeScript de código abierto, mantenido por Google, que se utiliza para crear y mantener aplicaciones web de una sola página. Su objetivo es aumentar las aplicaciones basadas en navegador con capacidad de Modelo Vista Controlador (MVC), en un esfuerzo para hacer que el desarrollo y las pruebas sean más fáciles.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Diferencias entre Angular 2 y Angular 4
+Angular adopta SEMVER
+El motivo detrás de toda esta discusión, es la adopción por parte de Angular de lo que se conoce como Semantic Versioning (o SEMVER).
+Basicamente el motivo por el cual no hay una version 3 de angular es que al utilizar este modo de versionado quisieron llevar todos los componentes a la misma version, pero... @angular/router ya se encontraba en la version 3.x.x por cual la decisión fue utilizar directamente la version 4 de angular.
 
-## Running end-to-end tests
+Novedades en Angular 4
+- Sintaxis if…else dentro de los templates
+- Modulo de animacion separado (Esto permite aplicaciones mas livianas).
+- Uso de StrictNullChecks de TypeScript (null y undefined son diferentes cosas)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
 
-## Further help
+## Como ejecutarlo
+1. git clone https://github.com/arqsoft-grupo1/frontend-angular.git frontend-angular
+2. cd frontend-angular
+3. npm install
+4. npm start o ng serve
 
-To gt more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# agularcomponents
+Url 127.0.0.1:4200
